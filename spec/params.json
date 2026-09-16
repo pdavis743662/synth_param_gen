@@ -1,0 +1,81 @@
+{
+  "params": [
+    {
+      "name": "waveform",
+      "type": "categorical",
+      "choices": ["sine", "saw", "square", "triangle"],
+      "n_classes": 4,
+      "description": "Selects the oscillator shape, which sets the harmonic content of the raw tone before filtering."
+    },
+    {
+      "name": "cutoff",
+      "type": "continuous",
+      "min": 100.0,
+      "max": 10000.0,
+      "scale": "log",
+      "n_classes": 16,
+      "unit": "Hz",
+      "description": "Sets the low-pass filter cutoff: harmonics above this frequency are attenuated, darkening the timbre."
+    },
+    {
+      "name": "resonance",
+      "type": "continuous",
+      "min": 0.5,
+      "max": 10.0,
+      "scale": "log",
+      "n_classes": 16,
+      "unit": "Q",
+      "description": "Sets the filter Q, boosting energy near the cutoff and adding a nasal or ringing character."
+    },
+    {
+      "name": "attack",
+      "type": "continuous",
+      "min": 0.001,
+      "max": 1.0,
+      "scale": "log",
+      "n_classes": 16,
+      "unit": "s",
+      "description": "How long the amplitude envelope takes to rise from silence to peak after note-on."
+    },
+    {
+      "name": "decay",
+      "type": "continuous",
+      "min": 0.01,
+      "max": 1.0,
+      "scale": "log",
+      "n_classes": 16,
+      "unit": "s",
+      "description": "How long the envelope takes to fall from the peak down to the sustain level."
+    },
+    {
+      "name": "sustain",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 1.0,
+      "scale": "linear",
+      "n_classes": 16,
+      "unit": "amp",
+      "description": "The held amplitude after decay, as a fraction of the peak, while the note is held."
+    },
+    {
+      "name": "release",
+      "type": "continuous",
+      "min": 0.01,
+      "max": 1.0,
+      "scale": "log",
+      "n_classes": 16,
+      "unit": "s",
+      "description": "How long the envelope takes to fall from the note-off level back to silence."
+    },
+    {
+      "name": "noise_level",
+      "type": "continuous",
+      "min": 0.0,
+      "max": 0.5,
+      "scale": "linear",
+      "n_classes": 16,
+      "unit": "amp",
+      "description": "Mixes in white noise, from a pure oscillator tone at 0 to a noisy texture at 0.5."
+    }
+  ]
+}
